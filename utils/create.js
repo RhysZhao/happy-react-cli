@@ -2,7 +2,7 @@
  * Author  rhys.zhao
  * Date  2022-09-02 13:22:04
  * LastEditors  rhys.zhao
- * LastEditTime  2022-12-30 19:28:19
+ * LastEditTime  2022-12-30 19:39:56
  * Description 创建项目
  */
 
@@ -108,7 +108,7 @@ module.exports = async function ({ projectName, force }) {
 
       // 安装依赖
       const installCmd =
-        installTool === 'cnpm' ? 'tnpm install --registry=https://registry.npm.taobao.org' : `${installTool} install`;
+        installTool === 'cnpm' ? 'npm install --registry=https://registry.npm.taobao.org' : `${installTool} install`;
 
       try {
         spinner.start('正在初始化git仓库...');
