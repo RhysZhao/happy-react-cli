@@ -1,6 +1,6 @@
 {
   "name": "happy-react-cli",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A custom scaffold for react",
   "main": "index.js",
   "bin": "bin/index.js",
@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/RhysZhao/happy-react-cli#readme",
   "dependencies": {
-    "axios": "^0.27.2",
     "chalk": "^4.1.2",
     "commander": "^9.4.0",
     "download-git-repo": "^3.0.2",

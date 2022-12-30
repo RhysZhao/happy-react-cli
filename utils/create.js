@@ -2,7 +2,7 @@
  * Author  rhys.zhao
  * Date  2022-09-02 13:22:04
  * LastEditors  rhys.zhao
- * LastEditTime  2022-09-05 15:54:14
+ * LastEditTime  2022-12-30 19:28:19
  * Description 创建项目
  */
 
@@ -17,8 +17,8 @@ const { getGitUser, runCmd } = require('./common.js');
 
 // 模板地址, 可配置自己的脚手架模板
 const repoMap = {
-  webpack: 'github:github.com:RhysZhao/react-router-v6-demo',
-  vite: 'github:github.com:RhysZhao/react-router-v6-demo'
+  webpack: 'github:github.com:RhysZhao/vite-react-template',
+  vite: 'github:github.com:RhysZhao/vite-react-template'
 };
 
 module.exports = async function ({ projectName, force }) {
@@ -88,7 +88,7 @@ module.exports = async function ({ projectName, force }) {
     spinner.start('正在下载模板...');
 
     await downloadGitRepo(repoUrl, targetDir, async () => {
-      spinner.succeed('模板下载完成');
+      spinner.succeed(`${chalk.yellow('模板下载完成')}`);
 
       // 修改package.json里面的信息，项目名称与作者
       try {
@@ -100,28 +100,37 @@ module.exports = async function ({ projectName, force }) {
         fs.writeJSONSync(resolve(targetDir, 'package.json'), package, {
           spaces: 2
         });
-        spinner.succeed('package.json修改完成');
+        spinner.succeed(`${chalk.yellow('package.json修改完成')}`);
       } catch (err) {
-        spinner.fail('修改package.json失败');
+        spinner.fail(`${chalk.red('修改package.json失败')}`);
         console.log(err);
       }
 
       // 安装依赖
       const installCmd =
-        installTool === 'cnpm' ? 'npm install --registry=https://registry.npm.taobao.org' : `${installTool} install`;
+        installTool === 'cnpm' ? 'tnpm install --registry=https://registry.npm.taobao.org' : `${installTool} install`;
+
+      try {
+        spinner.start('正在初始化git仓库...');
+        await runCmd(`cd ${projectName} && git init`);
+        spinner.succeed(`${chalk.yellow('初始化仓库成功')}`);
+      } catch (err) {
+        spinner.fail(`${chalk.red('初始化git仓库失败,请检查是否安装git')}`);
+      }
+
       try {
         spinner.start('正在安装依赖...');
-        await runCmd(`cd ${projectName} && ${installCmd}`);
-        spinner.succeed('依赖安装完成');
+        await runCmd(`${installCmd}`);
+        spinner.succeed(`${chalk.yellow('依赖安装完成')}`);
         console.log(`请运行 ${chalk.yellow(`cd ${projectName} && npm start`)}  启动项目吧！`);
       } catch (err) {
-        spinner.fail('依赖安装失败');
+        spinner.fail(`${chalk.red('依赖安装失败')}`);
         console.log('请运行如下命令手动安装：\n');
         console.log(`${chalk.yellow(`cd ${projectName} && ${installCmd}`)}`);
       }
     });
   } catch (err) {
-    spinner.fail('模板下载失败');
+    spinner.fail(`${chalk.red('模板下载失败, 请检查当前网络与github网站的连通性')}`);
     console.log(err);
   }
 };
