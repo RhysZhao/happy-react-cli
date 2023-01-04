@@ -4,9 +4,10 @@ const { program } = require('commander');
 const chalk = require('chalk');
 const create = require('../utils/create.js');
 const figlet = require('figlet');
+const { version } = require('../package.json');
 
 // 定义项目描述与帮助
-program.name('happy-react-cli').description('a custom CLI to react').usage(`<command> [option]`).version(`1.0.0`);
+program.name('happy-react-cli').description('a custom CLI to react').usage(`<command> [option]`).version(`${version}`);
 program
   .command('init [project-name]')
   .description('init a new project')
