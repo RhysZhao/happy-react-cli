@@ -2,7 +2,7 @@
  * Author  rhys.zhao
  * Date  2022-09-02 13:22:04
  * LastEditors  rhys.zhao
- * LastEditTime  2023-01-29 15:29:47
+ * LastEditTime  2023-01-29 16:16:28
  * Description 创建项目
  */
 
@@ -120,7 +120,7 @@ module.exports = async function ({ projectName, force }) {
 
       try {
         spinner.start('正在安装依赖...');
-        await runCmd(`${installCmd}`);
+        await runCmd(`cd ${projectName} && ${installCmd}`);
         spinner.succeed(`${chalk.yellow('依赖安装完成')}`);
         console.log(`请运行 ${chalk.yellow(`cd ${projectName} && npm start`)}  启动项目吧！`);
       } catch (err) {
