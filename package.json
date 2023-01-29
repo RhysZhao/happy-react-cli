@@ -1,7 +1,7 @@
 {
   "name": "happy-react-cli",
-  "version": "1.0.5",
-  "description": "A custom scaffold for react",
+  "version": "1.0.7",
+  "description": "一个React项目脚手架",
   "main": "index.js",
   "bin": "bin/index.js",
   "scripts": {

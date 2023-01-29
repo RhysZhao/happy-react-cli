@@ -2,20 +2,20 @@
  * Author  rhys.zhao
  * Date  2022-09-05 16:29:43
  * LastEditors  rhys.zhao
- * LastEditTime  2022-12-27 14:30:40
+ * LastEditTime  2023-01-29 15:05:52
  * Description
 -->
 
 # happy-react-cli
 
-## Description
+## 描述
 
-a cli for react project.
+一个 React 项目脚手架
 
-## Quick Start
+## 使用
 
 ```
 npx happy-react-cli init my-project
 ```
 
-select your favorite, and you can get a project template.
+然后根据你的需要来选择，你会得到相应的项目模板。
