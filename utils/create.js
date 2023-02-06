@@ -2,7 +2,7 @@
  * Author  rhys.zhao
  * Date  2022-09-02 13:22:04
  * LastEditors  rhys.zhao
- * LastEditTime  2023-01-29 16:16:28
+ * LastEditTime  2023-02-06 17:46:47
  * Description 创建项目
  */
 
@@ -18,7 +18,8 @@ const { getGitUser, runCmd } = require('./common.js');
 // 模板地址, 可配置自己的脚手架模板
 const repoMap = {
   webpack: 'github:github.com:RhysZhao/webpack-react-template',
-  vite: 'github:github.com:RhysZhao/vite-react-template'
+  vite: 'github:github.com:RhysZhao/vite-react-template',
+  'react-component': 'github:github.com:RhysZhao/webpack-component-template'
 };
 
 module.exports = async function ({ projectName, force }) {
