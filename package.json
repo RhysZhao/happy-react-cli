@@ -1,6 +1,6 @@
 {
   "name": "happy-react-cli",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "一个React项目脚手架",
   "main": "index.js",
   "bin": "bin/index.js",
