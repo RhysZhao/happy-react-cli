@@ -2,7 +2,7 @@
  * Author  rhys.zhao
  * Date  2022-09-02 13:22:04
  * LastEditors  rhys.zhao
- * LastEditTime  2023-03-02 19:24:36
+ * LastEditTime  2023-07-21 11:22:49
  * Description 创建项目
  */
 
@@ -20,7 +20,7 @@ const repoMap = {
   webpack: 'github:github.com:RhysZhao/webpack-react-template',
   vite: 'github:github.com:RhysZhao/vite-react-template',
   'react-component': 'github:github.com:RhysZhao/webpack-component-template',
-  vuepress: 'github:github.com:RhysZhao/webpack-learn'
+  vuepress: 'github:github.com:RhysZhao/vuepress-template'
 };
 
 module.exports = async function ({ projectName, force }) {
